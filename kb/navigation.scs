@@ -1,0 +1,30 @@
+concept_app_view
+  <- sc_node_class;
+  -> app_view_landing (*
+    => nrel_main_idtf: [Landing] (* <- lang_en;; *);;
+  *);
+  -> app_view_knowledge_base (*
+    => nrel_main_idtf: [KnowledgeBase] (* <- lang_en;; *);;
+  *);
+  -> app_view_concept_map (*
+    => nrel_main_idtf: [ConceptMap] (* <- lang_en;; *);;
+  *);
+  -> app_view_task_module (*
+    => nrel_main_idtf: [TaskModule] (* <- lang_en;; *);;
+  *);
+  -> app_view_playground (*
+    => nrel_main_idtf: [Playground] (* <- lang_en;; *);;
+  *);;
+
+concept_app_navigation_slice
+  <- sc_node_class;
+  -> app_navigation_slice_default;;
+
+app_navigation_slice_default
+  => nrel_current_view: app_view_landing;
+  => nrel_current_addr: [0] (* <- lang_en;; *);;
+
+sc_node_norole_relation ->
+  nrel_sandbox_id;
+  nrel_current_view;
+  nrel_current_addr;;
