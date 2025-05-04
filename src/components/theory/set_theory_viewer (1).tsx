@@ -11,10 +11,7 @@ export const SetTheoryViewer = () => {
   const { subjectDomainOfSetTheory } = await client.searchKeynodes("subject_domain_of_set_theory");
   const { nrelSectionDecomposition } = await client.searchKeynodes("nrel_section_decomposition");
 
-  async function buildSectionTree(sectionAddr): Promise<{
-    name: string;
-    subsections: any[];
-  }> {
+  async function buildSectionTree(sectionAddr) {
     const name = await helper.getMainIdentifier(sectionAddr, "lang_ru");
     const subsections = await findSubsections(sectionAddr);
     const subsectionTrees = await Promise.all(
@@ -27,7 +24,7 @@ export const SetTheoryViewer = () => {
     };
   }
 
-  async function findSubsections(parentAddr: ScAddr): Promise<ScAddr[]> {
+  async function findSubsections(parentAddr) {
     const sectionAlias = "_section";
     const textAlias = "_text";
     const template = new ScTemplate();
