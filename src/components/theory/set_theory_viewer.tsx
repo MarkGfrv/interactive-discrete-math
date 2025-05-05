@@ -13,6 +13,7 @@ export const SetTheoryViewer = () => {
 
   async function buildSectionTree(sectionAddr) {
     const name = await helper.getMainIdentifier(sectionAddr, "lang_ru");
+    const theory = await fetchTheory(sectionAddr);
     const subsections = await findSubsections(sectionAddr);
     const subsectionTrees = await Promise.all(
       subsections.map(addr => buildSectionTree(addr))
@@ -20,11 +21,12 @@ export const SetTheoryViewer = () => {
     return {
       addr: sectionAddr,
       name,
-      subsections: subsectionTrees
+      subsections: subsectionTrees,
+      theory: theory
     };
   }
 
-  async function findSubsections(parentAddr) {
+  async function findSubsections(parentAddr: ScAddr) {
     const sectionAlias = "_section";
     const textAlias = "_text";
     const template = new ScTemplate();
@@ -47,6 +49,41 @@ export const SetTheoryViewer = () => {
   const sectionTree = await buildSectionTree(subjectDomainOfSetTheory);
   console.log('Section tree:', sectionTree);
   return sectionTree;
+  }
+
+  async function fetchTheory(specificSection) {
+    console.log('start section theory fetching...');
+    const { nrelScTextTranslation, langRu } = await client.searchKeynodes("nrel_sc_text_translation", "lang_ru");
+    console.log("Section address is equal to", specificSection);
+    const translationAlias = "_translation";
+    const textAlias = "_text";
+    const template = new ScTemplate();
+    template.quintuple(
+      [ScType.VarNode, translationAlias],
+      ScType.VarCommonArc,
+      specificSection,
+      ScType.VarPermPosArc,
+      nrelScTextTranslation
+    );
+    template.triple(
+      translationAlias,
+      ScType.VarPermPosArc,
+      [ScType.VarNodeLink, textAlias]
+    );
+    template.triple(
+      langRu,
+      ScType.VarPermPosArc,
+      textAlias
+    );
+    const res = await client.searchByTemplate(template);
+    if (!res.length) {
+      console.log('Cannot fing theory for section!');
+      return new ScAddr(0);
+    }
+    console.log("Theory fetched succesfully", res);
+    const linkContent = ( await client.getLinkContents([res[0].get(textAlias)]) )[0];
+    console.log("links content: ", linkContent._data);
+    return linkContent._data;
   }
   
   useEffect(() => {
