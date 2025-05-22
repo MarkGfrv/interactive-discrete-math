@@ -1,0 +1,522 @@
+concept_workspace_menu
+=> nrel_main_idtf:
+	[меню рабочего пространства] (* <- lang_ru;; *);
+	[workspace menu] (* <- lang_en;; *);;
+
+definition -> definition_of_workspace_menu (*
+	-> rrel_key_sc_element: concept_workspace_menu;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Меню инструментов, позволяюших выполнять операции над графами и множествами.] (* <- lang_ru;; *);;
+		-> [A tools menu that allows you to perform operations on graphs and sets.] (* <- lang_en;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+		[Опр. (меню рабочего пространства)] (* <- lang_ru;; *);
+		[Def. (workspace menu)] (* <- lang_en;; *);;
+
+*);;
+
+
+workspace_menu_actions
+=> nrel_main_idtf:
+	[действия меню рабочего пространства] (* <- lang_ru;; *);
+	[workspace menu actions] (* <- lang_en;; *);;
+
+definition -> definition_of_workspace_menu_actions (*
+	-> rrel_key_sc_element: workspace_menu_actions;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действия, которые возможно выполнить с графами и множествами.] (* <- lang_ru;; *);;
+		-> [Actions that can be performed with graphs and sets.] (* <- lang_en;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+		[Опр. (действия меню рабочего пространства)] (* <- lang_ru;; *);
+		[Def. (workspace menu actions)] (* <- lang_en;; *);;
+*);;
+
+
+concept_action_class
+=> nrel_main_idtf:
+	[класс действий] (* <- lang_ru;; *);
+	[action class] (* <- lang_en;; *);;
+
+definition -> definition_of_action_class (*
+	-> rrel_key_sc_element: concept_action_class;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Набор действий, объединенных общими характеристиками или целями.] (* <- lang_ru;; *);;
+		-> [A set of actions united by common characteristics or goals.] (* <- lang_en;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+		[Опр. (класс действий)] (* <- lang_ru;; *);
+		[Def. (action classs)] (* <- lang_en;; *);;
+*);;
+
+
+concept_set_of_groups
+=> nrel_main_idtf:
+	[множество графов] (* <- lang_ru;; *);
+	[set of graphs] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_groups (*
+	-> rrel_key_sc_element: concept_set_of_groups;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Множество графов, выбранных для выполнения какого-либо действия.] (* <- lang_ru;; *);;
+		-> [Set of graphs selected to perform an action.] (* <- lang_en;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+		[Опр. (множество графов)] (* <- lang_ru;; *);
+		[Def. (set of graphs)] (* <- lang_en;; *);;
+	
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+concept_set_of_action_classes
+=> nrel_main_idtf:
+	[множество классов действий] (* <- lang_ru;; *);
+	[set of action classes] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_action_classes (*
+	-> rrel_key_sc_element: concept_set_of_action_classes;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Совокупность различных классов действий, связанных определенной целью или стратегией.] (* <- lang_ru;; *);;
+		-> [A set of different classes of actions related to a specific goal or strategy.] (* <- lang_en;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+		[Опр. (множество классов действий)] (* <- lang_ru;; *);
+		[Def. (set of action classes)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action_class
+	};;
+*);;
+
+
+concept_set_of_active_actions
+=> nrel_main_idtf:
+	[множество активных действий] (* <- lang_ru;; *);
+	[set of active actions] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_active_actions (*
+	-> rrel_key_sc_element: concept_set_of_active_actions;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Множество действий, которые в настоящее время выполняются или активно используются.] (* <- lang_ru;; *);;
+		-> [A set of actions that are currently being performed or actively used.] (* <- lang_en;; *);;
+	*);;
+	=> nrel_main_idtf:
+		[Опр. (набор активных действий)] (* <- lang_ru;; *);
+		[Def. (set of active actions)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+concept_active_action
+=> nrel_main_idtf:
+	[активное действие] (* <- lang_ru;; *);
+	[active action] (* <- lang_en;; *);;
+
+definition -> definition_of_active_action (*
+	-> rrel_key_sc_element: concept_active_action;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие, которое в настоящее время выполняется или активно используется.] (* <- lang_ru;; *);;
+		-> [An action that is currently being performed or is being actively used.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (активное действие)] (* <- lang_ru;; *);
+		[Def. (active action)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+concept_set_of_actions
+=> nrel_main_idtf:
+	[множество действий] (* <- lang_ru;; *);
+	[set of actions] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_actions (*
+	-> rrel_key_sc_element: concept_set_of_actions;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Множество действий, которые доступны в рамках конкретного класса действий.] (* <- lang_ru;; *);;
+		-> [Set of actions available within a specific actions class.] (* <- lang_en;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+	[Опр. (множество действий)] (* <- lang_ru;; *);
+	[Def. (set of actions)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action_class
+	};;
+*);;
+
+
+concept_agent_arg
+=> nrel_main_idtf:
+	[аргумент агента] (* <- lang_ru;; *);
+	[agent's argument] (* <- lang_en;; *);;
+
+definition -> definition_of_agent_arg (*
+	-> rrel_key_sc_element: concept_agent_arg;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Аргумент, который использует действие (агент) для запуска.] (* <- lang_ru;; *);;
+		-> [The argument that uses the action (agent) to run.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (аргумент агента)] (* <- lang_ru;; *);
+		[Def. (agent's argument)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+concept_agent_type
+=> nrel_main_idtf:
+	[тип аргумента агента] (* <- lang_ru;; *);
+	[agent's argument type] (* <- lang_en;; *);;
+
+definition -> definition_of_agent_type (*
+	-> rrel_key_sc_element: concept_agent_type;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Тип аргумента, который использует действие (агент).] (* <- lang_ru;; *);;
+		-> [The type of argument that the action (agent) uses.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (тип аргумента агента)] (* <- lang_ru;; *);
+		[Def. (agent's argument type)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+concept_action
+=> nrel_main_idtf:
+	[действие] (* <- lang_ru;; *);
+	[action] (* <- lang_en;; *);;
+
+definition -> definition_of_action (*
+	-> rrel_key_sc_element: concept_action;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие (агент), которое небходимо выполнить.] (* <- lang_ru;; *);;
+		-> [The action (agent) to be performed.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (действие)] (* <- lang_ru;; *);
+		[Def. (action)] (* <- lang_en;; *);;
+*);;
+
+set_of_actions_operations
+=> nrel_main_idtf:
+	[Множество операций] (* <- lang_ru;; *);
+	[Set of operations] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_actions_operations (*
+	-> rrel_key_sc_element: set_of_actions_operations;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Множество действий класса "Операция", которые можно выполнять над множествами и графами.] (* <- lang_ru;; *);;
+		-> [Set of actions of class "Operation" that can be performed on sets and graphs.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (Множество операций)] (* <- lang_ru;; *);
+		[Def. (Set of operations)] (* <- lang_en;; *);;
+*);;
+
+
+set_of_actions_classification
+=> nrel_main_idtf:
+	[классификация] (* <- lang_ru;; *);
+	[classification] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_actions_classification (*
+	-> rrel_key_sc_element: set_of_actions_classification;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действия, которые можно выполнить для классификации.] (* <- lang_ru;; *);;
+		-> [Actions that can be performed for classification.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (классификация)] (* <- lang_ru;; *);
+		[Def. (classification)] (* <- lang_en;; *);;
+*);;
+
+
+set_of_actions_numeric_value
+=> nrel_main_idtf:
+	[числовые характеристики] (* <- lang_ru;; *);
+	[numerical characteristics] (* <- lang_en;; *);;
+
+definition -> definition_of_set_of_actions_numeric_value (*
+	-> rrel_key_sc_element: set_of_actions_numeric_value;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действия, которые можно выполнять для поиска числовых характеристик множеств и графов.] (* <- lang_ru;; *);;
+		-> [Actions that can be performed to search for numerical characteristics of sets and graphs.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (числовые характеристики)] (* <- lang_ru;; *);
+		[Def. (numerical characteristics)] (* <- lang_en;; *);;
+*);;
+
+
+app_workspace_tools_slice_default
+=> nrel_main_idtf:
+	[состояние меню по умолчанию] (* <- lang_ru;; *);
+	[default menu status] (* <- lang_en;; *);;
+
+definition -> definition_of_app_workspace_tools_slice_default (*
+	-> rrel_key_sc_element: app_workspace_tools_slice_default;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Состояние, в котором находится меню по умолчанию.] (* <- lang_ru;; *);;
+		-> [The state in which the default menu is located.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (состояние меню по умолчанию)] (* <- lang_ru;; *);
+		[Def. (default menu status)] (* <- lang_en;; *);;
+*);;
+
+
+concept_app_workspace_tools_slice
+=> nrel_main_idtf:
+	[состояние меню] (* <- lang_ru;; *);
+	[menu status] (* <- lang_en;; *);;
+
+definition -> definition_of_app_workspace_tools_slice (*
+	-> rrel_key_sc_element: concept_app_workspace_tools_slice;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Состояние, в котором находится меню.] (* <- lang_ru;; *);;
+		-> [The state in which the menu is located.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (состояние меню)] (* <- lang_ru;; *);
+		[Def. (menu status)] (* <- lang_en;; *);;
+*);;
+
+
+concept_app_workspace
+=> nrel_main_idtf:
+	[рабочее пространство] (* <- lang_ru;; *);
+	[workspace] (* <- lang_en;; *);;
+
+definition -> definition_of_app_workspace (*
+	-> rrel_key_sc_element: concept_app_workspace;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Рабочая область в системе, где пользователи могут создавать и анализировать графы с помощью графового редактора и набора инструментов, использующие интеллектуальные агенты.] (* <- lang_ru;; *);;
+		-> [A workspace in the system where users can create and analyze graphs using a graph editor and a set of tools using intelligent agents.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (рабочее пространство)] (* <- lang_ru;; *);
+		[Def. (workspace)] (* <- lang_en;; *);;
+*);;
+
+action_directed_graph
+=> nrel_main_idtf:
+	[Действие проверки графа на ориентированность] (* <- lang_ru;; *);
+	[defining a graph for orientation] (* <- lang_en;; *);;
+
+definition -> definition_of_action_directed_graph (*
+	-> rrel_key_sc_element: action_directed_graph;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению графа на ориентированность.] (* <- lang_ru;; *);;
+		-> [The action of defining a graph for orientation.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (Действие проверки графа на ориентированность)] (* <- lang_ru;; *);
+		[Def. (defining a graph for orientation)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+action_union
+=> nrel_main_idtf:
+	[Действие объединения графов] (* <- lang_ru;; *);
+	[Graphs union action] (* <- lang_en;; *);;
+
+definition -> definition_of_action_union (*
+	-> rrel_key_sc_element: action_union;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению объединения графов.] (* <- lang_ru;; *);;
+		-> [The action to determine the union of graphs.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (Действие объединения графов)] (* <- lang_ru;; *);
+		[Def. (defining a graphs union)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+action_intersection
+=> nrel_main_idtf:
+	[Действие пересечения графов] (* <- lang_ru;; *);
+	[defining the intersection of graphs] (* <- lang_en;; *);;
+
+definition -> definition_of_action_intersection (*
+	-> rrel_key_sc_element: action_intersection;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению пересечения графов.] (* <- lang_ru;; *);;
+		-> [The action to determine the intersection of graphs.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (Действие пересечения графов)] (* <- lang_ru;; *);
+		[Def. (defining the intersection of graphs)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+action_set_intersections
+=> nrel_main_idtf:
+	[Действие пересечения множеств] (* <- lang_ru;; *);
+	[defining the intersection of sets] (* <- lang_en;; *);;
+
+definition -> definition_of_action_set_intersections (*
+	-> rrel_key_sc_element: action_set_intersections;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению пересечения множеств.] (* <- lang_ru;; *);;
+		-> [The action to determine the intersection of sets.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (определение пересечения множеств)] (* <- lang_ru;; *);
+		[Def. (defining the intersection of sets)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+action_set_union
+=> nrel_main_idtf:
+	[Действие объединения множеств] (* <- lang_ru;; *);
+	[defining the union of sets] (* <- lang_en;; *);;
+
+definition -> definition_of_action_set_union (*
+	-> rrel_key_sc_element: action_set_union;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению объединения множеств.] (* <- lang_ru;; *);;
+		-> [The action to determine the union of sets.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (определение объединения множеств)] (* <- lang_ru;; *);
+		[Def. (defining the union of sets)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+action_power
+=> nrel_main_idtf:
+	[Действие мощности множества] (* <- lang_ru;; *);
+	[defining the power of set] (* <- lang_en;; *);;
+
+definition -> definition_of_action_power (*
+	-> rrel_key_sc_element: action_power;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению мощности множества.] (* <- lang_ru;; *);;
+		-> [The action to determine the power of set.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (Действие мощности множества)] (* <- lang_ru;; *);
+		[Def. (defining the power of sets)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+action_vertexes
+=> nrel_main_idtf:
+	[Действие количество вершин графа] (* <- lang_ru;; *);
+	[determining the number of vertices of a graph] (* <- lang_en;; *);;
+
+definition -> definition_of_action_vertexes (*
+	-> rrel_key_sc_element: action_vertexes;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Действие по определению количества вершин графа.] (* <- lang_ru;; *);;
+		-> [The action of determining the number of vertices of a graph.] (* <- lang_en;; *);;
+	*);;
+
+		=> nrel_main_idtf:
+		[Опр. (Действие количество вершин графа)] (* <- lang_ru;; *);
+		[Def. (determining the number of vertices of a graph)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+
+
+
+definition -> definition_of_action_class_operations (*
+	-> rrel_key_sc_element: action_class_operations;;
+
+	<= nrel_sc_text_translation: ... (*
+		-> [Данный класс действий предоставляет множество операций, которые можно произвести над множествами и графами.] (* <- lang_ru;; *);;
+	*);;
+
+	=> nrel_main_idtf:
+	[Опр. (Класс действий "Операция")] (* <- lang_ru;; *);;
+*);;

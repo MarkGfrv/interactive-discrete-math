@@ -1,0 +1,199 @@
+nrel_tools
+=> nrel_main_idtf:
+    [панель инструментов*] (* <- lang_ru;; *);
+    [tools panel*] (* <- lang_en;; *);;
+
+definition -> definition_of_tools (*
+    -> rrel_key_sc_element: nrel_tools;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Элемент интерфейса, содержащий набор инструментов, предназначенных для выполнения действий над объектами.] (* <- lang_ru;; *);;
+        -> [An interface element that contains a set of tools designed to perform actions on objects.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+        [Опр. (панель инструментов)] (* <- lang_ru;; *);
+        [Def. (tools panel)] (* <- lang_en;; *);;
+*);;
+
+
+nrel_decomposition
+=> nrel_main_idtf:
+    [декомпозиция*] (* <- lang_ru;; *); // тут не нужно же определение?
+    [decomposition*] (* <- lang_en;; *);; // отв: можно рассмотреть использование nrel_decomposition_of_action
+
+nrel_agent_arg
+=> nrel_main_idtf:
+    [аргумент агента*] (* <- lang_ru;; *);
+    [agent argument*] (* <- lang_en;; *);;
+
+definition -> definition_of_agent_arg (*
+    -> rrel_key_sc_element: nrel_agent_arg;;
+
+    <= nrel_sc_text_translation: ... (*
+		-> [Понятие или отношение, которое используется в качестве аргумента при запуске агента.] (* <- lang_ru;; *);;
+		-> [A concept or a relation that is used as an argument when executing an agent.] (* <- lang_en;; *);;
+	*);;
+
+    => nrel_main_idtf:
+    [Опр. (аргумент агента)] (* <- lang_ru;; *);
+    [Def. (agent's argument)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+nrel_agent_type
+=> nrel_main_idtf:
+    [ответственный агент*] (* <- lang_ru;; *);
+    [responsible agent*] (* <- lang_en;; *);;
+
+definition -> definition_of_agent_type (*
+    -> rrel_key_sc_element: nrel_agent_type;;
+
+    <= nrel_sc_text_translation: ... (*
+		-> [Агент, отвечающий за выполнение действия] (* <- lang_ru;; *);;
+		-> [An agent responsible for performing the action] (* <- lang_en;; *);;
+	*);;
+
+    => nrel_main_idtf:
+    [Опр. (ответственный агент)] (* <- lang_ru;; *);
+    [Def. (responsible agent)] (* <- lang_en;; *);;
+
+	=> nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+nrel_opened
+=> nrel_main_idtf:
+    [открытое состояние*] (* <- lang_ru;; *);
+    [opened state*] (* <- lang_en;; *);;
+
+definition -> definition_of_opened (*
+    -> rrel_key_sc_element: nrel_opened;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Состояние элемента интерфейса, определяющее его развёрнутость или видимость на экране.] (* <- lang_ru;; *);;
+        -> [A state of an interface element that determines its expansion or visibility on the screen.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+        [Опр. (открыт)] (* <- lang_ru;; *);
+        [Def. (opened)] (* <- lang_en;; *);;
+*);;
+
+
+nrel_arg_selector
+=> nrel_main_idtf:
+    [выбор аргумента*] (* <- lang_ru;; *);
+    [argument selector*] (* <- lang_en;; *);;
+
+definition -> definition_of_arg_selector (*
+    -> rrel_key_sc_element: nrel_arg_selector;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Значение текущего выбора определенного аргумента или параметра.] (* <- lang_ru;; *);;
+        -> [The value of current selection of a specific argument or parameter.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+        [Опр. (выбор аргумента)] (* <- lang_ru;; *);
+        [Def. (argument selector)] (* <- lang_en;; *);;
+*);;
+
+
+nrel_properties
+=> nrel_main_idtf:
+    [свойства объектов*] (* <- lang_ru;; *);
+    [object properties*] (* <- lang_en;; *);;
+
+definition -> definition_of_properties (*
+    -> rrel_key_sc_element: nrel_properties;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Свойства объектов в рабочем пространстве.] (* <- lang_ru;; *);;
+        -> [Properties of objects in a workspace.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+        [Опр. (свойства объектов)] (* <- lang_ru;; *);
+        [Def. (object properties)] (* <- lang_en;; *);;
+
+    => nrel_using_constants: {
+        concept_workspace
+	};;
+*);;
+
+
+nrel_args
+=> nrel_main_idtf:
+    [аргументы*] (* <- lang_ru;; *);
+    [arguments*] (* <- lang_en;; *);;
+
+definition -> definition_of_args (*
+    -> rrel_key_sc_element: nrel_args;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Значения, передаваемые действию (агенту) для выполнения.] (* <- lang_ru;; *);;
+        -> [Values passed to the action (agent) for execution.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+       [Опр. (аргументы)] (* <- lang_ru;; *);
+       [Def. (arguments)] (* <- lang_en;; *);;
+
+    => nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+nrel_status
+=> nrel_main_idtf:
+    [статус*] (* <- lang_ru;; *);
+    [status*] (* <- lang_en;; *);;
+
+definition -> definition_of_status (*
+    -> rrel_key_sc_element: nrel_status;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Статус выполняемого или выполненного действия.] (* <- lang_ru;; *);;
+        -> [Status of an action performed or being performed.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+       [Опр. (статус)] (* <- lang_ru;; *);
+       [Def. (status)] (* <- lang_en;; *);;
+
+    => nrel_using_constants: {
+		concept_action
+	};;
+*);;
+
+
+nrel_icon
+=> nrel_main_idtf:
+    [название иконки*] (* <- lang_ru;; *);
+    [icon name*] (* <- lang_en;; *);;
+
+definition -> definition_of_icon (*
+    -> rrel_key_sc_element: nrel_icon;;
+
+    <= nrel_sc_text_translation: ... (*
+        -> [Название иконки для отображения в интерфейсе.] (* <- lang_ru;; *);;
+        -> [An icon name to be displayed in the interface.] (* <- lang_en;; *);;
+    *);;
+
+    => nrel_main_idtf:
+       [Опр. (название иконки)] (* <- lang_ru;; *);
+       [Def. (icon name)] (* <- lang_en;; *);;
+*);;
+
+nrel_button_name
+=> nrel_main_idtf:
+    [название кнопки*] (* <- lang_ru;; *);
+    [button name*] (* <- lang_en;; *);;

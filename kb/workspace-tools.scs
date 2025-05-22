@@ -1,0 +1,160 @@
+concept_workspace_menu
+  <- sc_node_class;
+  -> workspace_menu_actions;;
+
+workspace_menu_actions
+  => nrel_decomposition: ... (*
+    <- sc_node_struct;;
+    <- concept_set_of_action_classes;;
+    -> action_class_classification (*
+      <- concept_action_class;;
+      => nrel_main_idtf: [Класс действий "Классификация"] (* <- lang_ru;; *);;
+      => nrel_button_name: [Классификация] (* <- lang_ru;; *);;
+      => nrel_icon: [tag];;
+      => nrel_decomposition: set_of_actions_classification (*
+        <- concept_set_of_actions;;
+        -> action_directed_graph (*
+          <- concept_action;;
+          => nrel_button_name: [Ориентированный граф] (* <- lang_ru;; *);;
+          => nrel_agent_arg: concept_directed_graph;;
+          => nrel_agent_type: action_using_unary_operation;;
+        *);;
+      *);;
+    *);;
+    -> action_class_operations (*
+      <- concept_action_class;;
+      => nrel_main_idtf: [Класс действий "Операция"] (* <- lang_ru;; *);;
+      => nrel_button_name: [Операция] (* <- lang_ru;; *);;
+      => nrel_icon: [math];;
+      => nrel_decomposition: set_of_actions_operations (*
+        <- concept_set_of_actions;;
+        -> action_union (*
+          <- concept_action;;
+          => nrel_button_name: [Объединение графов] (* <- lang_ru;; *);;
+          => nrel_agent_arg: nrel_graph_union;;
+          => nrel_agent_type: action_using_binary_operation;;
+        *);;
+        -> action_intersection (*
+          <- concept_action;;
+          => nrel_button_name: [Пересечение графов] (* <- lang_ru;; *);;
+          => nrel_agent_arg: nrel_graph_intersection;;
+          => nrel_agent_type: action_using_binary_operation;;
+        *);;
+        -> action_set_intersections (*
+          <- concept_action;;
+          => nrel_button_name: [Пересечение множеств] (* <- lang_ru;; *);;
+          => nrel_agent_arg: nrel_graph_intersection;;
+          => nrel_agent_type: action_using_binary_operation;;
+        *);;
+        -> action_set_union (*
+          <- concept_action;;
+          => nrel_button_name: [Объединение множеств] (* <- lang_ru;; *);;
+          => nrel_agent_arg: nrel_graph_union;;
+          => nrel_agent_type: action_using_binary_operation;;
+        *);;
+      *);;
+    *);;
+    -> action_class_numeric_value (*
+      <- concept_action_class;;
+      => nrel_main_idtf: [Класс действий "Числовая характеристика"] (* <- lang_ru;; *);;
+      => nrel_button_name: [Числовая характеристика] (* <- lang_ru;; *);;
+      => nrel_icon: [calculator];;
+      => nrel_decomposition: set_of_actions_numeric_value (*
+        <- concept_set_of_actions;;
+        -> action_power (*
+            <- concept_action;;
+            => nrel_button_name: [Мощность множества] (* <- lang_ru;; *);;
+            => nrel_agent_arg: action_finding_power;;
+            => nrel_agent_type: action_finding_power;;
+          *);;
+        -> action_vertexes (*
+            <- concept_action;;
+            => nrel_button_name: [Количество вершин] (* <- lang_ru;; *);;
+            => nrel_agent_arg: nrel_number_of_vertexes;;
+            => nrel_agent_type: action_using_unary_operation;;
+          *);;
+      *);;
+    *);;
+  *);;
+
+concept_app_workspace_tools_slice
+  <- sc_node_class;
+  -> app_workspace_tools_slice_default;;
+
+app_workspace_tools_slice_default
+  => nrel_opened: workspace_menu_actions;
+  => nrel_opened: action_class_operations;
+  => nrel_opened: action_union;
+  => nrel_arg_selector: [0];
+  => nrel_args: ... (*
+    <- concept_set_of_groups;;
+    -> rrel_1: fake_graph_group_1;;
+    -> rrel_2: fake_graph_group_2;;
+  *);
+
+  => nrel_properties: ... (*
+    <- concept_set_of_active_actions;;
+    -> ... (*
+      <- concept_active_action;;
+      => nrel_action: action_union;;
+      => nrel_args: ... (*
+        <- concept_set_of_groups;;
+        -> rrel_1: fake_graph_group_1;;
+        -> rrel_2: fake_graph_group_2;;
+        -> rrel_3: fake_graph_group_2;;
+      *);;
+      => nrel_status: active_action_status_details;;
+    *);;
+  *);;
+
+concept_active_action_status
+  <- sc_node_class;
+  -> active_action_status_true (*
+    => nrel_main_idtf: [True];;
+  *);
+  -> active_action_status_false (*
+    => nrel_main_idtf: [False];;
+  *);
+  -> active_action_status_details (*
+    => nrel_main_idtf: [Details];;
+  *);
+  -> active_action_status_unknown (*
+    => nrel_main_idtf: [Unknown];;
+  *);;
+
+concept_agent_arg ->
+  concept_directed_graph;
+  nrel_graph_union;
+  nrel_graph_intersection;;
+
+concept_agent_type -> 
+  action_initiated;
+  action_using_unary_operation;
+  action_using_binary_operation;;
+
+sc_node_norole_relation ->
+  nrel_tools;
+  nrel_decomposition;
+  nrel_agent_arg;
+  nrel_agent_type;
+  nrel_opened;
+  nrel_arg_selector;
+  nrel_properties;
+  nrel_args;
+  nrel_status;
+  nrel_value;
+  nrel_icon;;
+
+sc_node_class ->
+  concept_action_class;
+  concept_set_of_groups;
+  concept_set_of_action_classes;
+  concept_set_of_active_actions;
+  concept_active_action;
+  concept_runner;
+  concept_question;
+  concept_set_of_actions;
+  concept_agent_arg;
+  concept_agent_type;
+  concept_numeric_value;
+  concept_action;;
